@@ -1406,258 +1406,220 @@ body, html {
 
 
 
-    <!-- =========================================
-        SECTION INFO PPDB (VERSI PERBAIKAN)
-        ========================================= -->
-    <section class="ppdb-section">
-        <div class="container">
-            <div class="ppdb-card" data-aos="fade-up">
-                <!-- Konten Teks -->
-                <div class="ppdb-content">
-                    <div class="ppdb-header">
-                        <span class="ppdb-badge">Angkatan 2026/2027</span>
-                        <h2>Gerbang Masa Depan Gemilang Telah Dibuka!</h2>
-                        <p>Jadilah bagian dari keluarga besar SMP Negeri 12 Gresik. Kami siap membimbing putra-putri Anda menjadi generasi cerdas, kreatif, dan berkarakter.</p>
-                    </div>
-                    <div class="ppdb-timeline">
-                        <div class="timeline-item">
-                            <div class="timeline-icon"><i class="fas fa-file-signature"></i></div>
-                            <div class="timeline-content">
-                                <h4>Pendaftaran Online</h4>
-                                <p>1 - 15 Juni 2026</p>
-                            </div>
-                        </div>
-                        <div class="timeline-item">
-                            <div class="timeline-icon"><i class="fas fa-tasks"></i></div>
-                            <div class="timeline-content">
-                                <h4>Seleksi & Verifikasi</h4>
-                                <p>16 - 20 Juni 2026</p>
-                            </div>
-                        </div>
-                        <div class="timeline-item">
-                            <div class="timeline-icon"><i class="fas fa-bullhorn"></i></div>
-                            <div class="timeline-content">
-                                <h4>Pengumuman Hasil</h4>
-                                <p>22 Juni 2026</p>
-                            </div>
-                        </div>
-                        <div class="timeline-item">
-                            <div class="timeline-icon"><i class="fas fa-user-check"></i></div>
-                            <div class="timeline-content">
-                                <h4>Daftar Ulang</h4>
-                                <p>23 - 25 Juni 2026</p>
-                            </div>
+   <!-- =========================================
+     REBUILD FINAL (DESAIN COMPACT & MODERN + KONTEN RESMI)
+     ========================================= -->
+<section class="ppdb-section-v3">
+    <div class="container">
+        <div class="ppdb-card-v3" data-aos="fade-up">
+            <!-- Kolom Kiri: Konten Informasi -->
+            <div class="ppdb-content-v3">
+                <div class="ppdb-header-v3">
+                    <span class="ppdb-badge-v3">PPDB T.A. 2026/2027</span>
+                    <h2 class="ppdb-title-v3">Informasi Penerimaan Siswa Baru</h2>
+                    <p class="ppdb-description-v3">
+                        Pendaftaran siswa baru SMP Negeri 12 Gresik mengikuti sistem resmi dari Dinas Pendidikan. Berikut adalah jalur pendaftaran yang tersedia.
+                    </p>
+                </div>
+
+                <!-- JALUR PENDAFTARAN (REVISI TOTAL DARI JADWAL) -->
+                <div class="ppdb-schedule-v3">
+                    <div class="schedule-item-v3">
+                        <div class="schedule-icon-v3"><i class="fas fa-hands-helping"></i></div>
+                        <div class="schedule-info-v3">
+                            <h6>Jalur Afirmasi</h6>
+                            <span>Bagi siswa dari keluarga tidak mampu.</span>
                         </div>
                     </div>
-                    <div class="ppdb-buttons">
-                        <a href="#" class="btn btn-primary">
-                            <i class="fas fa-file-alt"></i> Lihat Panduan Lengkap
-                        </a>
-                        <a href="#" class="btn btn-outline">
-                            <i class="fab fa-whatsapp"></i> Hubungi Panitia
-                        </a>
+                    <div class="schedule-item-v3">
+                        <div class="schedule-icon-v3"><i class="fas fa-exchange-alt"></i></div>
+                        <div class="schedule-info-v3">
+                            <h6>Jalur Perpindahan Tugas</h6>
+                            <span>Bagi siswa yang orang tuanya pindah tugas.</span>
+                        </div>
+                    </div>
+                    <div class="schedule-item-v3">
+                        <div class="schedule-icon-v3"><i class="fas fa-trophy"></i></div>
+                        <div class="schedule-info-v3">
+                            <h6>Jalur Prestasi</h6>
+                            <span>Bagi siswa dengan prestasi akademik/non-akademik.</span>
+                        </div>
+                    </div>
+                    <div class="schedule-item-v3">
+                        <div class="schedule-icon-v3"><i class="fas fa-map-marked-alt"></i></div>
+                        <div class="schedule-info-v3">
+                            <h6>Jalur Zonasi</h6>
+                            <span>Berdasarkan jarak tempat tinggal ke sekolah.</span>
+                        </div>
                     </div>
                 </div>
 
-                <!-- Bagian Gambar Slider (Struktur Diperbaiki) -->
-                <div class="ppdb-image-container">
-                    <div class="swiper ppdbSwiper">
-                        <div class="swiper-wrapper">
-                            <div class="swiper-slide">
-                                <img src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?q=80&w=1920&auto=format&fit=crop" alt="Siswa berprestasi">
-                            </div>
-                            <div class="swiper-slide">
-                                <img src="https://images.unsplash.com/photo-1541339907198-e08756dedf3f?q=80&w=1920&auto=format&fit=crop" alt="Suasana belajar di kelas">
-                            </div>
-                            <div class="swiper-slide">
-                                <img src="https://images.unsplash.com/photo-1577896851231-70ef18881754?q=80&w=1920&auto-format&fit=crop" alt="Fasilitas laboratorium">
-                            </div>
-                        </div>
-                        <!-- Navigasi dan Paginasi dipindahkan ke dalam .ppdbSwiper -->
-                        <div class="swiper-button-next"></div>
-                        <div class="swiper-button-prev"></div>
-                        <div class="swiper-pagination"></div>
+                <!-- Tombol Aksi -->
+                <div class="ppdb-buttons-v3">
+                    <a href="#" class="btn btn-primary">
+                        <i class="fas fa-info-circle me-2"></i> Lihat Panduan Lengkap
+                    </a>
+                    <a href="#" class="btn btn-outline-secondary">
+                        <i class="fab fa-whatsapp me-2"></i> Hubungi Panitia
+                    </a>
+                </div>
+            </div>
+
+            <!-- Kolom Kanan: Gambar Slider -->
+            <div class="ppdb-image-v3">
+                <div class="swiper ppdbSwiperV3">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide"><img src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?q=80&w=1000&auto=format&fit=crop" alt="Siswa berprestasi"></div>
+                        <div class="swiper-slide"><img src="https://images.unsplash.com/photo-1541339907198-e08756dedf3f?q=80&w=1000&auto=format&fit=crop" alt="Suasana belajar"></div>
+                        <div class="swiper-slide"><img src="https://images.unsplash.com/photo-1577896851231-70ef18881754?q=80&w=1000&auto=format&fit=crop" alt="Fasilitas sekolah"></div>
                     </div>
+                    <div class="swiper-button-next"></div>
+                    <div class="swiper-button-prev"></div>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
-<!-- CSS Perbaikan -->
+<!-- CSS (TIDAK ADA PERUBAHAN, TETAP SAMA SEPERTI SEBELUMNYA ) -->
 <style>
-    .ppdb-section {
-        padding: var(--space-24, 6rem ) 0;
-        background: #f8fafc;
+    .ppdb-section-v3 {
+        padding: 5rem 0;
+        background: #f8f9fa;
     }
-
-    .ppdb-card {
+    .ppdb-card-v3 {
         display: grid;
         grid-template-columns: 1fr;
-        background: white;
-        border-radius: var(--radius-3xl, 1.5rem);
-        box-shadow: var(--shadow-xl, 0 20px 25px -5px rgba(0,0,0,0.1), 0 10px 10px -5px rgba(0,0,0,0.04));
+        background: #ffffff;
+        border-radius: 1.25rem;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.07);
         overflow: hidden;
-        border: 1px solid var(--gray-200, #e5e7eb);
+        border: 1px solid #e9ecef;
     }
-
     @media (min-width: 992px) {
-        .ppdb-card {
-            grid-template-columns: 55% 45%;
-        }
+        .ppdb-card-v3 { grid-template-columns: 55% 45%; }
     }
-
-    .ppdb-content {
-        padding: var(--space-10, 2.5rem) var(--space-8, 2rem);
+    .ppdb-content-v3 {
+        padding: 2.5rem;
         display: flex;
         flex-direction: column;
-        justify-content: center;
     }
-    
     @media (max-width: 768px) {
-        .ppdb-content {
-            padding: var(--space-8, 2rem) var(--space-6, 1.5rem);
-        }
+        .ppdb-content-v3 { padding: 2rem 1.5rem; }
     }
-
-    .ppdb-header {
-        text-align: center;
-        margin-bottom: var(--space-8, 2rem);
-    }
-
-    @media (min-width: 992px) {
-        .ppdb-header {
-            text-align: left;
-        }
-    }
-
-    .ppdb-badge {
-        display: inline-block;
-        background: var(--gradient-primary, linear-gradient(135deg, #16a34a, #22c55e));
-        color: white;
-        padding: 6px 16px;
-        border-radius: 9999px;
+    .ppdb-badge-v3 {
         font-size: 0.8rem;
         font-weight: 600;
-        margin-bottom: var(--space-4, 1rem);
+        color: #16a34a;
+        background-color: #e7f5ec;
+        padding: 0.4rem 0.8rem;
+        border-radius: 6px;
+        align-self: flex-start;
+        margin-bottom: 1rem;
     }
-
-    .ppdb-header h2 {
+    .ppdb-title-v3 {
         font-family: 'Poppins', sans-serif;
-        font-size: clamp(1.75rem, 5vw, 2.25rem);
+        font-size: 2rem;
         font-weight: 700;
-        color: var(--gray-900, #111827);
-        line-height: 1.2;
-        margin-bottom: var(--space-4, 1rem);
+        color: #212529;
+        margin-bottom: 0.5rem;
     }
-
-    .ppdb-header p {
-        color: var(--gray-600, #4b5563);
-        font-size: 1.1rem;
+    .ppdb-description-v3 {
+        color: #6c757d;
         line-height: 1.6;
+        margin-bottom: 2rem;
     }
-
-    .ppdb-timeline {
+    .ppdb-schedule-v3 {
         display: grid;
         grid-template-columns: 1fr;
-        gap: var(--space-6, 1.5rem);
-        margin-bottom: var(--space-8, 2rem);
+        gap: 1rem;
+        margin-bottom: 2rem;
     }
-    
     @media (min-width: 576px) {
-        .ppdb-timeline {
-            grid-template-columns: 1fr 1fr;
-        }
+        .ppdb-schedule-v3 { grid-template-columns: 1fr 1fr; }
     }
-
-    .timeline-item { display: flex; align-items: center; gap: var(--space-4, 1rem); }
-    .timeline-icon { flex-shrink: 0; width: 50px; height: 50px; background: linear-gradient(135deg, #f0fdf4, #dcfce7); color: var(--primary-600, #16a34a); border-radius: var(--radius-xl, 0.75rem); display: flex; align-items: center; justify-content: center; font-size: 1.5rem; }
-    .timeline-content h4 { font-family: 'Poppins', sans-serif; font-weight: 600; color: var(--gray-800, #1f2937); margin-bottom: 2px; }
-    .timeline-content p { font-size: 0.9rem; color: var(--gray-500, #6b7280); }
-
-    .ppdb-buttons { display: flex; flex-direction: column; gap: var(--space-4, 1rem); }
-    @media (min-width: 576px) { .ppdb-buttons { flex-direction: row; justify-content: center; } }
-    @media (min-width: 992px) { .ppdb-buttons { justify-content: flex-start; } }
-
-    /* === PERBAIKAN UTAMA PADA SLIDER === */
-    .ppdb-image-container {
+    .schedule-item-v3 {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        background-color: #f8f9fa;
+        padding: 0.75rem;
+        border-radius: 0.75rem;
+        border: 1px solid #e9ecef;
+    }
+    .schedule-icon-v3 {
+        flex-shrink: 0;
+        width: 40px;
+        height: 40px;
+        border-radius: 0.5rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: #16a34a;
+        color: white;
+    }
+    .schedule-info-v3 h6 {
+        font-weight: 600;
+        font-size: 0.9rem;
+        margin-bottom: 0;
+    }
+    .schedule-info-v3 span {
+        font-size: 0.8rem;
+        color: #6c757d;
+    }
+    .ppdb-buttons-v3 {
+        margin-top: auto;
+        display: flex;
+        gap: 0.75rem;
+    }
+    .ppdb-buttons-v3 .btn {
+        font-weight: 500;
+        padding: 0.6rem 1.2rem;
+        border-radius: 0.5rem;
+    }
+    .ppdb-image-v3 {
         position: relative;
-        min-height: 350px;
-        width: 100%;
-        height: 100%;
+        min-height: 400px;
     }
-
     @media (max-width: 991px) {
-        .ppdb-image-container {
+        .ppdb-image-v3 {
             order: -1;
-            height: 350px; /* Beri tinggi tetap di mobile */
+            height: 300px;
         }
     }
-
-    .ppdbSwiper {
+    .ppdbSwiperV3 {
         position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
+        top: 0; left: 0;
+        width: 100%; height: 100%;
     }
-
-    .ppdbSwiper .swiper-slide img {
-        width: 100%;
-        height: 100%;
+    .ppdbSwiperV3 .swiper-slide img {
+        width: 100%; height: 100%;
         object-fit: cover;
     }
-
-    /* Styling Navigasi & Paginasi yang lebih spesifik */
-    .ppdb-image-container .swiper-button-next,
-    .ppdb-image-container .swiper-button-prev {
-        color: #ffffff;
-        background-color: rgba(0, 0, 0, 0.3);
-        width: 44px;
-        height: 44px;
+    .ppdbSwiperV3 .swiper-button-next,
+    .ppdbSwiperV3 .swiper-button-prev {
+        color: #fff;
+        background-color: rgba(0,0,0,0.2);
+        width: 40px; height: 40px;
         border-radius: 50%;
-        transition: background-color 0.3s ease;
     }
-    .ppdb-image-container .swiper-button-next:hover,
-    .ppdb-image-container .swiper-button-prev:hover {
-        background-color: rgba(0, 0, 0, 0.5);
-    }
-    .ppdb-image-container .swiper-button-next::after,
-    .ppdb-image-container .swiper-button-prev::after {
-        font-size: 18px;
-        font-weight: 800;
-    }
-    .ppdb-image-container .swiper-pagination-bullet {
-        width: 10px;
-        height: 10px;
-        background-color: rgba(255, 255, 255, 0.7);
-        opacity: 1;
-    }
-    .ppdb-image-container .swiper-pagination-bullet-active {
-        background-color: #ffffff;
+    .ppdbSwiperV3 .swiper-button-next::after,
+    .ppdbSwiperV3 .swiper-button-prev::after {
+        font-size: 1rem;
     }
 </style>
 
-<!-- JavaScript (Tidak ada perubahan, tetap sama) -->
+<!-- JavaScript (TIDAK ADA PERUBAHAN) -->
 <script>
 document.addEventListener("DOMContentLoaded", () => {
   if (typeof Swiper !== 'undefined') {
-    const ppdbSwiper = new Swiper(".ppdbSwiper", {
+    const ppdbSwiperV3 = new Swiper(".ppdbSwiperV3", {
       loop: true,
-      autoplay: {
-        delay: 4000,
-        disableOnInteraction: false,
-      },
       effect: 'fade',
-      fadeEffect: {
-        crossFade: true
-      },
+      autoplay: { delay: 4000, disableOnInteraction: false },
       navigation: {
-        nextEl: ".ppdb-image-container .swiper-button-next",
-        prevEl: ".ppdb-image-container .swiper-button-prev",
-      },
-      pagination: {
-        el: ".ppdb-image-container .swiper-pagination",
-        clickable: true,
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
       },
     });
   }

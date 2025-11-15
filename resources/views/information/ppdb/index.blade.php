@@ -1,131 +1,141 @@
-{{--
-  File: resources/views/informasi/ppdb/detail.blade.php
-  (Desain Baru terinspirasi dari SMPN 03 Batu)
---}}
+@extends('layouts.app')
 
-<!DOCTYPE html>
-<html lang="id">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Informasi PPDB - SMP Negeri 12 Gresik</title>
+@section('content')
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+@if(!$ppdb)
+    <section class="py-20 text-center">
+        <h2 class="text-2xl font-bold mb-2">PPDB Belum Tersedia</h2>
+        <p class="text-gray-600">Admin belum mengisi data PPDB.</p>
+    </section>
+    @return
+@endif
 
-    <style>
-        :root {
-            --primary-color: #16a34a;
-            --gray-50: #f8f9fa;
-            --gray-700: #495057;
-            --gray-900: #212529;
-        }
-        body { background-color: var(--gray-50 ); font-family: 'Poppins', sans-serif; color: var(--gray-700); }
-        .main-container { max-width: 850px; margin: 2rem auto; }
-        .article-card {
-            background: white;
-            border-radius: 0.75rem;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
-            overflow: hidden;
-        }
-        .article-header { padding: 2rem 2.5rem 1.5rem; }
-        .article-header h1 { font-weight: 700; color: var(--gray-900); line-height: 1.3; }
-        .article-meta { font-size: 0.9rem; color: #6c757d; }
-        .article-poster img { width: 100%; height: 400px; object-fit: cover; }
-        .article-body { padding: 2rem 2.5rem; }
-        .article-section { margin-bottom: 2.5rem; }
-        .section-title {
-            font-size: 1.75rem;
-            font-weight: 600;
-            color: var(--gray-900);
-            border-bottom: 2px solid var(--primary-color);
-            padding-bottom: 0.5rem;
-            margin-bottom: 1.5rem;
-            display: inline-block;
-        }
-        .toc { /* Table of Contents */
-            background-color: #f1f3f5;
-            border-left: 4px solid var(--primary-color);
-            padding: 1rem 1.5rem;
-            border-radius: 0.5rem;
-        }
-        .toc ul { padding-left: 1rem; margin-bottom: 0; }
-        .toc a { text-decoration: none; color: #0d6efd; }
-        .timeline { /* ... (CSS timeline dari sebelumnya) ... */ }
-        .requirements-list { /* ... (CSS requirements dari sebelumnya) ... */ }
-        .table .date-highlight { font-weight: 600; color: var(--primary-color); }
-        .table .quota-highlight { font-weight: 600; color: #0d6efd; }
-        .accordion-button:not(.collapsed) { color: var(--gray-900); background-color: #e7f5ec; box-shadow: none; font-weight: 600; }
-    </style>
-</head>
-<body>
-    {{-- Anda bisa menambahkan header minimalis di sini jika mau --}}
 
-    <div class="main-container">
-        <div class="article-card">
-            <div class="article-header">
-                <h1 class="mb-2">Informasi PPDB SMP Negeri 12 Gresik Tahun Ajaran 2026/2027</h1>
-                <div class="article-meta">
-                    <i class="fas fa-calendar-alt"></i> Dipublikasikan pada 10 November 2025
-                </div>
-            </div>
-            <div class="article-poster">
-                <img src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?q=80&w=1200&auto=format&fit=crop" alt="Poster PPDB">
-            </div>
-            <div class="article-body">
-                
-                <!-- Daftar Isi (Table of Contents ) -->
-                <div class="article-section toc">
-                    <h5 class="fw-bold">Daftar Isi</h5>
-                    <ul>
-                        <li><a href="#alur">Alur Pendaftaran</a></li>
-                        <li><a href="#syarat">Syarat Pendaftaran</a></li>
-                        <li><a href="#jadwal">Jadwal Penting</a></li>
-                        <li><a href="#jalur">Jalur Pendaftaran & Kuota</a></li>
-                        <li><a href="#faq">Tanya Jawab (FAQ)</a></li>
-                    </ul>
+<!-- =========================================
+ PPDB INDEX (DINAMIS)
+========================================= -->
+<section class="ppdb-section-v3">
+    <div class="container">
+        <div class="ppdb-card-v3" data-aos="fade-up">
+
+            <!-- Kolom Kiri -->
+            <div class="ppdb-content-v3">
+
+                <div class="ppdb-header-v3">
+
+                    @if($ppdb->section_badge)
+                        <span class="ppdb-badge-v3">{{ $ppdb->section_badge }}</span>
+                    @endif
+
+                    <h2 class="ppdb-title-v3">
+                        {{ $ppdb->section_title ?? 'Informasi Penerimaan Peserta Didik Baru' }}
+                    </h2>
+
+                    <p class="ppdb-description-v3">
+                        {{ $ppdb->section_description ?? 'Informasi resmi PPDB SMP Negeri 12 Gresik' }}
+                    </p>
+
                 </div>
 
-                <!-- Alur Pendaftaran -->
-                <div id="alur" class="article-section">
-                    <h2 class="section-title">Alur Pendaftaran</h2>
-                    {{-- (Konten Alur Pendaftaran dari kode Anda sebelumnya) --}}
+                <!-- JALUR PENDAFTARAN -->
+                <div class="ppdb-schedule-v3">
+
+                    @if($ppdb->jalur_afirmasi)
+                    <div class="schedule-item-v3">
+                        <div class="schedule-icon-v3"><i class="fas fa-hands-helping"></i></div>
+                        <div class="schedule-info-v3">
+                            <h6>Jalur Afirmasi</h6>
+                            <span>{{ $ppdb->jalur_afirmasi }}</span>
+                        </div>
+                    </div>
+                    @endif
+
+                    @if($ppdb->jalur_perpindahan)
+                    <div class="schedule-item-v3">
+                        <div class="schedule-icon-v3"><i class="fas fa-exchange-alt"></i></div>
+                        <div class="schedule-info-v3">
+                            <h6>Jalur Perpindahan Tugas</h6>
+                            <span>{{ $ppdb->jalur_perpindahan }}</span>
+                        </div>
+                    </div>
+                    @endif
+
+                    @if($ppdb->jalur_prestasi)
+                    <div class="schedule-item-v3">
+                        <div class="schedule-icon-v3"><i class="fas fa-trophy"></i></div>
+                        <div class="schedule-info-v3">
+                            <h6>Jalur Prestasi</h6>
+                            <span>{{ $ppdb->jalur_prestasi }}</span>
+                        </div>
+                    </div>
+                    @endif
+
+                    @if($ppdb->jalur_zonasi)
+                    <div class="schedule-item-v3">
+                        <div class="schedule-icon-v3"><i class="fas fa-map-marked-alt"></i></div>
+                        <div class="schedule-info-v3">
+                            <h6>Jalur Zonasi</h6>
+                            <span>{{ $ppdb->jalur_zonasi }}</span>
+                        </div>
+                    </div>
+                    @endif
+
                 </div>
 
-                <!-- Syarat Pendaftaran -->
-                <div id="syarat" class="article-section">
-                    <h2 class="section-title">Syarat Pendaftaran</h2>
-                    {{-- (Konten Syarat Pendaftaran dari kode Anda sebelumnya) --}}
-                </div>
+                <!-- BUTTONS -->
+                <div class="ppdb-buttons-v3">
 
-                <!-- Jadwal Penting -->
-                <div id="jadwal" class="article-section">
-                    <h2 class="section-title">Jadwal Penting</h2>
-                    {{-- (Konten Tabel Jadwal dari kode Anda sebelumnya) --}}
-                </div>
-
-                <!-- Jalur Pendaftaran -->
-                <div id="jalur" class="article-section">
-                    <h2 class="section-title">Jalur Pendaftaran & Kuota</h2>
-                    {{-- (Konten Tabel Jalur & Kuota dari kode Anda sebelumnya) --}}
-                </div>
-
-                <!-- Tanya Jawab (FAQ) -->
-                <div id="faq" class="article-section">
-                    <h2 class="section-title">Tanya Jawab (FAQ)</h2>
-                    {{-- (Konten Accordion FAQ dari kode Anda sebelumnya) --}}
-                </div>
-
-                <div class="text-center mt-5">
-                    <a href="https://ppdb.dinas-gresik.net" class="btn btn-primary btn-lg px-5">
-                        <i class="fas fa-external-link-alt me-2"></i> Kunjungi Laman Pendaftaran Resmi
+                    @if($ppdb->button_panduan_link)
+                    <a href="{{ $ppdb->button_panduan_link }}" class="btn btn-primary">
+                        <i class="fas fa-info-circle me-2"></i>
+                        {{ $ppdb->button_panduan_text ?? 'Lihat Panduan Lengkap' }}
                     </a>
+                    @endif
+
+                    @if($ppdb->button_wa_link)
+                    <a href="{{ $ppdb->button_wa_link }}" class="btn btn-outline-secondary">
+                        <i class="fab fa-whatsapp me-2"></i>
+                        {{ $ppdb->button_wa_text ?? 'Hubungi Panitia' }}
+                    </a>
+                    @endif
+
+                </div>
+
+            </div>
+
+            <!-- Kolom Kanan (Slider) -->
+            <div class="ppdb-image-v3">
+                <div class="swiper ppdbSwiperV3">
+                    <div class="swiper-wrapper">
+
+                        @if($ppdb->slider_1)
+                        <div class="swiper-slide">
+                            <img src="{{ asset('storage/' . $ppdb->slider_1) }}" alt="">
+                        </div>
+                        @endif
+
+                        @if($ppdb->slider_2)
+                        <div class="swiper-slide">
+                            <img src="{{ asset('storage/' . $ppdb->slider_2) }}" alt="">
+                        </div>
+                        @endif
+
+                        @if($ppdb->slider_3)
+                        <div class="swiper-slide">
+                            <img src="{{ asset('storage/' . $ppdb->slider_3) }}" alt="">
+                        </div>
+                        @endif
+
+                    </div>
+
+                    <div class="swiper-button-next"></div>
+                    <div class="swiper-button-prev"></div>
+
                 </div>
             </div>
+
         </div>
     </div>
+</section>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
-</body>
-</html>
+@endsection

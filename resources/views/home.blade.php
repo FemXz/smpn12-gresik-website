@@ -8,12 +8,12 @@
     /* ========================================
        ADDITIONAL STYLES FOR HOME PAGE
        ======================================== */
-    
+
     /* Hero Section Enhancements */
     .hero {
         padding-top: 80px; /* Account for fixed navbar */
     }
-    
+
     /* Stats Section */
     .stats {
         background: var(--gradient-primary);
@@ -577,7 +577,7 @@
     <div class="hero-text" data-aos="fade-right">
       <h1>Selamat Datang di<br>SMP Negeri 12 Gresik</h1>
       <p>
-        Membangun generasi cerdas dan berkarakter melalui pendidikan berkualitas 
+        Membangun generasi cerdas dan berkarakter melalui pendidikan berkualitas
         dengan teknologi modern. Bergabunglah dengan kami untuk masa depan yang gemilang.
       </p>
       <div class="hero-buttons">
@@ -934,6 +934,167 @@ slider.addEventListener("touchmove", e => {
 
 
 
+    <style>
+        .welcome-hero {
+            background-color: #f0f9f7;
+            padding: 60px 20px;
+        }
+
+        .welcome-hero__container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .welcome-hero__image {
+            width: 100%;
+            height: 450px;
+            background-color: #e0f2f1;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .welcome-hero__image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .welcome-hero__content h2 {
+            font-size: 28px;
+            font-weight: 600;
+            color: #1b5e20;
+            margin-bottom: 8px;
+            line-height: 1.3;
+        }
+
+        .welcome-hero__subtitle {
+            font-size: 14px;
+            font-weight: 500;
+            color: #4caf50;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 20px;
+        }
+
+        .welcome-hero__text {
+            font-size: 15px;
+            line-height: 1.7;
+            color: #424242;
+            margin-bottom: 16px;
+        }
+
+        .welcome-hero__text:last-of-type {
+            margin-bottom: 28px;
+        }
+
+        .welcome-hero__signature {
+            margin-top: 24px;
+            padding-top: 20px;
+            border-top: 1px solid #c8e6c9;
+        }
+
+        .welcome-hero__name {
+            font-size: 16px;
+            font-weight: 600;
+            color: #1b5e20;
+            margin-bottom: 4px;
+        }
+
+        .welcome-hero__position {
+            font-size: 13px;
+            color: #558b2f;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .welcome-hero {
+                padding: 40px 20px;
+            }
+
+            .welcome-hero__container {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+            .welcome-hero__image {
+                height: 350px;
+            }
+
+            .welcome-hero__content h2 {
+                font-size: 24px;
+            }
+
+            .welcome-hero__text {
+                font-size: 14px;
+                line-height: 1.6;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .welcome-hero {
+                padding: 30px 16px;
+            }
+
+            .welcome-hero__container {
+                gap: 20px;
+            }
+
+            .welcome-hero__image {
+                height: 280px;
+            }
+
+            .welcome-hero__content h2 {
+                font-size: 20px;
+            }
+
+            .welcome-hero__subtitle {
+                font-size: 12px;
+            }
+
+            .welcome-hero__text {
+                font-size: 13px;
+            }
+
+            .welcome-hero__name {
+                font-size: 14px;
+            }
+
+            .welcome-hero__position {
+                font-size: 12px;
+            }
+        }
+    </style>
+    <section class="welcome-hero">
+        <div class="welcome-hero__container">
+            <div class="welcome-hero__image">
+                <img src="https://via.placeholder.com/500x450?text=Foto+Kepala+Sekolah" alt="Kepala Sekolah">
+            </div>
+
+            <div class="welcome-hero__content">
+                <div class="welcome-hero__subtitle">Sambutan Kepala Sekolah</div>
+                <h2>Selamat Datang di Sekolah Kami</h2>
+
+                <p class="welcome-hero__text">
+                    Assalamu'alaikum Warahmatullahi Wabarakatuh. Dengan penuh kebanggaan, saya menyambut Anda di sekolah kami. Kami berkomitmen untuk memberikan pendidikan berkualitas yang mengembangkan akademik, karakter, dan kepribadian setiap siswa.
+                </p>
+
+                <p class="welcome-hero__text">
+                    Setiap siswa adalah aset berharga. Dengan dedikasi dan dukungan dari semua pihak, kami yakin dapat menciptakan generasi yang cerdas, berakhlak mulia, dan siap menghadapi masa depan.
+                </p>
+
+                <div class="welcome-hero__signature">
+                    <div class="welcome-hero__name">Drs. Nama Kepala Sekolah</div>
+                    <div class="welcome-hero__position">Kepala Sekolah</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
 <!-- Latest News Section -->
 <section class="news">
     <div class="container">
@@ -941,7 +1102,7 @@ slider.addEventListener("touchmove", e => {
             <h2>Berita Terbaru</h2>
             <p>Ikuti perkembangan dan prestasi terbaru dari SMP Negeri 12 Gresik</p>
         </div>
-        
+
         <div class="news-grid">
             @if(isset($data['latest_news']) && $data['latest_news']->count())
                 @foreach($data['latest_news'] as $index => $news)
@@ -996,7 +1157,7 @@ slider.addEventListener("touchmove", e => {
             <h2>Agenda Mendatang</h2>
             <p>Jangan lewatkan kegiatan dan acara penting di sekolah kami</p>
         </div>
-        
+
         <div class="events-grid">
             @if(isset($data['upcoming_events']) && count($data['upcoming_events']) > 0)
                 @foreach($data['upcoming_events'] as $index => $event)
@@ -1098,9 +1259,9 @@ slider.addEventListener("touchmove", e => {
     </div>
 </section>
 
-{{-- 
+{{--
     File: resources/views/components/teacher-section.blade.php (atau nama file Anda)
-    
+
     Catatan:
     - Kode ini mengasumsikan Anda meneruskan variabel `$teachers` dari controller.
     - Pastikan path untuk gambar (`asset('storage/'.$teacher->photo)`) sudah benar.
@@ -1183,7 +1344,7 @@ body, html {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 1rem;
-    align-content: flex-start; 
+    align-content: flex-start;
 }
 
 /* Responsive grid untuk tablet dan desktop */
@@ -1213,7 +1374,7 @@ body, html {
     border: 2px solid transparent;
     padding: 20px;
     /* Menjaga rasio aspek kartu tetap konsisten */
-    aspect-ratio: 3 / 4; 
+    aspect-ratio: 3 / 4;
 }
 
 .teacher-card:hover {
@@ -1249,7 +1410,7 @@ body, html {
     padding: 2rem 1rem 1rem;
     color: white;
     background: linear-gradient(to top, rgba(7, 94, 60, 0.8), transparent);
-    
+
     /* Sembunyikan di awal */
     opacity: 0;
     transform: translateY(20px);
@@ -1325,19 +1486,19 @@ body, html {
     .featured-teacher-card {
         padding: 1.5rem;
     }
-    
+
     .featured-teacher-image {
         max-width: 200px;
     }
-    
+
     .featured-teacher-name {
         font-size: 1.5rem;
     }
-    
+
     .main-title {
         font-size: 2rem;
     }
-    
+
     .section-badge {
         font-size: 0.75rem;
         padding: 0.4rem 1.2rem;
@@ -1348,28 +1509,28 @@ body, html {
     .teacher-section-container {
         padding: 3rem 0;
     }
-    
+
     .featured-teacher-card {
         padding: 1rem;
     }
-    
+
     .featured-teacher-image {
         max-width: 150px;
     }
-    
+
     .featured-teacher-name {
         font-size: 1.25rem;
         margin-top: 1rem;
     }
-    
+
     .main-title {
         font-size: 1.75rem;
     }
-    
+
     .teacher-grid {
         gap: 0.75rem;
     }
-    
+
     .teacher-card {
         aspect-ratio: 1 / 1.2;
     }
@@ -1406,62 +1567,78 @@ body, html {
 
 
 
-   <!-- =========================================
-     REBUILD FINAL (DESAIN COMPACT & MODERN + KONTEN RESMI)
-     ========================================= -->
 <section class="ppdb-section-v3">
     <div class="container">
         <div class="ppdb-card-v3" data-aos="fade-up">
+
             <!-- Kolom Kiri: Konten Informasi -->
             <div class="ppdb-content-v3">
                 <div class="ppdb-header-v3">
-                    <span class="ppdb-badge-v3">PPDB T.A. 2026/2027</span>
-                    <h2 class="ppdb-title-v3">Informasi Penerimaan Siswa Baru</h2>
+                    <span class="ppdb-badge-v3">
+                        {{ optional($ppdb)->section_badge ?? 'PPDB T.A.' }}
+                    </span>
+
+                    <h2 class="ppdb-title-v3">
+                        {{ optional($ppdb)->section_title ?? 'Informasi Penerimaan Siswa Baru' }}
+                    </h2>
+
                     <p class="ppdb-description-v3">
-                        Pendaftaran siswa baru SMP Negeri 12 Gresik mengikuti sistem resmi dari Dinas Pendidikan. Berikut adalah jalur pendaftaran yang tersedia.
+                        {!! optional($ppdb)->section_description ?? 'Deskripsi belum diatur.' !!}
                     </p>
                 </div>
 
-                <!-- JALUR PENDAFTARAN (REVISI TOTAL DARI JADWAL) -->
+                <!-- JALUR PENDAFTARAN -->
                 <div class="ppdb-schedule-v3">
+
                     <div class="schedule-item-v3">
                         <div class="schedule-icon-v3"><i class="fas fa-hands-helping"></i></div>
                         <div class="schedule-info-v3">
                             <h6>Jalur Afirmasi</h6>
-                            <span>Bagi siswa dari keluarga tidak mampu.</span>
+                            <span>{{ optional($ppdb)->section_jalur_afirmasi ?? '-' }}</span>
                         </div>
                     </div>
+
                     <div class="schedule-item-v3">
                         <div class="schedule-icon-v3"><i class="fas fa-exchange-alt"></i></div>
                         <div class="schedule-info-v3">
                             <h6>Jalur Perpindahan Tugas</h6>
-                            <span>Bagi siswa yang orang tuanya pindah tugas.</span>
+                            <span>{{ optional($ppdb)->section_jalur_pindah ?? '-' }}</span>
                         </div>
                     </div>
+
                     <div class="schedule-item-v3">
                         <div class="schedule-icon-v3"><i class="fas fa-trophy"></i></div>
                         <div class="schedule-info-v3">
                             <h6>Jalur Prestasi</h6>
-                            <span>Bagi siswa dengan prestasi akademik/non-akademik.</span>
+                            <span>{{ optional($ppdb)->section_jalur_prestasi ?? '-' }}</span>
                         </div>
                     </div>
+
                     <div class="schedule-item-v3">
                         <div class="schedule-icon-v3"><i class="fas fa-map-marked-alt"></i></div>
                         <div class="schedule-info-v3">
                             <h6>Jalur Zonasi</h6>
-                            <span>Berdasarkan jarak tempat tinggal ke sekolah.</span>
+                            <span>{{ optional($ppdb)->section_jalur_zonasi ?? '-' }}</span>
                         </div>
                     </div>
+
                 </div>
 
                 <!-- Tombol Aksi -->
                 <div class="ppdb-buttons-v3">
-                    <a href="#" class="btn btn-primary">
-                        <i class="fas fa-info-circle me-2"></i> Lihat Panduan Lengkap
+
+                    <a href="{{ optional($ppdb)->button_panduan_link ?? '#' }}"
+                       class="btn btn-primary">
+                        <i class="fas fa-info-circle me-2"></i>
+                        {{ optional($ppdb)->button_panduan_text ?? 'Lihat Panduan Lengkap' }}
                     </a>
-                    <a href="#" class="btn btn-outline-secondary">
-                        <i class="fab fa-whatsapp me-2"></i> Hubungi Panitia
+
+                    <a href="{{ optional($ppdb)->button_wa_link ?? '#' }}"
+                       class="btn btn-outline-secondary">
+                        <i class="fab fa-whatsapp me-2"></i>
+                        {{ optional($ppdb)->button_wa_text ?? 'Hubungi Panitia' }}
                     </a>
+
                 </div>
             </div>
 
@@ -1469,17 +1646,38 @@ body, html {
             <div class="ppdb-image-v3">
                 <div class="swiper ppdbSwiperV3">
                     <div class="swiper-wrapper">
-                        <div class="swiper-slide"><img src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?q=80&w=1000&auto=format&fit=crop" alt="Siswa berprestasi"></div>
-                        <div class="swiper-slide"><img src="https://images.unsplash.com/photo-1541339907198-e08756dedf3f?q=80&w=1000&auto=format&fit=crop" alt="Suasana belajar"></div>
-                        <div class="swiper-slide"><img src="https://images.unsplash.com/photo-1577896851231-70ef18881754?q=80&w=1000&auto=format&fit=crop" alt="Fasilitas sekolah"></div>
+
+                        @if(optional($ppdb)->slider_1)
+                            <div class="swiper-slide">
+                                <img src="{{ asset('storage/' . $ppdb->slider_1) }}" alt="Slider 1">
+                            </div>
+                        @endif
+
+                        @if(optional($ppdb)->slider_2)
+                            <div class="swiper-slide">
+                                <img src="{{ asset('storage/' . $ppdb->slider_2) }}" alt="Slider 2">
+                            </div>
+                        @endif
+
+                        @if(optional($ppdb)->slider_3)
+                            <div class="swiper-slide">
+                                <img src="{{ asset('storage/' . $ppdb->slider_3) }}" alt="Slider 3">
+                            </div>
+                        @endif
+
                     </div>
+
                     <div class="swiper-button-next"></div>
                     <div class="swiper-button-prev"></div>
+
                 </div>
             </div>
+
         </div>
     </div>
 </section>
+
+
 
 <!-- CSS (TIDAK ADA PERUBAHAN, TETAP SAMA SEPERTI SEBELUMNYA ) -->
 <style>
@@ -1607,6 +1805,47 @@ body, html {
     .ppdbSwiperV3 .swiper-button-prev::after {
         font-size: 1rem;
     }
+    /* ===== MOBILE FIX ===== */
+@media (max-width: 575px) {
+    .ppdb-title-v3 {
+        font-size: 1.5rem; /* lebih kecil supaya muat */
+    }
+
+    .ppdb-description-v3 {
+        font-size: 0.9rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .ppdb-schedule-v3 {
+        grid-template-columns: 1fr; /* satu kolom aja */
+        gap: 0.75rem;
+    }
+
+    .schedule-item-v3 {
+        padding: 0.6rem;
+        gap: 0.5rem;
+    }
+
+    .schedule-icon-v3 {
+        width: 35px;
+        height: 35px;
+    }
+
+    .ppdb-buttons-v3 {
+        flex-direction: column; /* tombol stack di mobile */
+        gap: 0.5rem;
+    }
+
+    .ppdb-buttons-v3 .btn {
+        width: 100%; /* tombol full-width */
+        text-align: center;
+    }
+
+    .ppdb-image-v3 {
+        min-height: 200px; /* biar ga terlalu tinggi */
+    }
+}
+
 </style>
 
 <!-- JavaScript (TIDAK ADA PERUBAHAN) -->
@@ -1642,12 +1881,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
         @if(isset($teachers) && $teachers->count() > 0)
             <div class="flex flex-col lg:flex-row gap-8 lg:gap-12">
-                
+
               <!-- Panel Detail Guru (Kiri) -->
 <div id="guru-detail" class="w-full lg:w-2/5 lg:sticky top-24 self-start">
     <div class="featured-teacher-card p-6 text-center">
         <div class="featured-teacher-image aspect-square max-w-xs mx-auto">
-            <img 
+            <img
                 src="{{ $teachers->first()->photo ? asset('public/'.$teachers->first()->photo) : 'https://ui-avatars.com/api/?name=' . urlencode($teachers->first()->name) . '&background=random' }}"
                 alt="{{ $teachers->first()->name }}"
                 id="featured-image"
@@ -1667,8 +1906,8 @@ document.addEventListener("DOMContentLoaded", () => {
                  data-nama="{{ $teacher->name }}"
                  data-jabatan="{{ $teacher->position }}"
                  data-foto="{{ $teacher->photo ? asset('public/'.$teacher->photo) : 'https://ui-avatars.com/api/?name=' . urlencode($teacher->name) . '&background=random' }}">
-                
-                <img 
+
+                <img
                     src="{{ $teacher->photo ? asset('public/'.$teacher->photo) : 'https://ui-avatars.com/api/?name=' . urlencode($teacher->name) . '&background=random' }}"
                     alt="{{ $teacher->name }}"
                     loading="lazy">
@@ -1745,7 +1984,7 @@ document.addEventListener("DOMContentLoaded", () => {
             <h2>Fasilitas Unggulan</h2>
             <p>Fasilitas modern dan lengkap untuk mendukung proses pembelajaran yang optimal</p>
         </div>
-        
+
         <div class="facilities-grid">
             @if(isset($data['facilities']) && count($data['facilities']) > 0)
                 @foreach($data['facilities'] as $index => $facility)
@@ -1808,7 +2047,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 </div>
             @endif
         </div>
-        
+
         <div class="text-center mt-6" data-aos="fade-up">
             <a href="{{ route('facilities') }}" class="btn btn-primary">
                 <i class="fas fa-building"></i>

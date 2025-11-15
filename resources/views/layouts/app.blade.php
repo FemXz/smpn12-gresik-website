@@ -5,36 +5,36 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>@yield('title', 'SMP Negeri 12 Gresik - Smart School Unggul dalam Prestasi')</title>
-    
+
     <!-- SEO Meta Tags -->
     <meta name="description" content="@yield('description', 'SMP Negeri 12 Gresik adalah Smart School unggulan yang mengutamakan kualitas pendidikan dengan teknologi modern dan tenaga pengajar profesional.')">
     <meta name="keywords" content="SMP Negeri 12 Gresik, smart school, sekolah digital, pendidikan teknologi, Gresik">
     <meta name="author" content="SMP Negeri 12 Gresik">
-    
+
     <!-- Open Graph Meta Tags -->
     <meta property="og:title" content="@yield('title', 'SMP Negeri 12 Gresik - Smart School')">
     <meta property="og:description" content="@yield('description', 'Smart School dengan pendidikan berkualitas dan teknologi modern di Gresik')">
     <meta property="og:image" content="{{ asset('assets/logo-smp.png') }}">
     <meta property="og:url" content="{{ url()->current() }}">
     <meta property="og:type" content="website">
-    
+
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="{{ asset('assets/logo-smp.png') }}">
-    
+
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.gstatic.com" >
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
 
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-    
+
     <!-- Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    
+
     <!-- AOS Animation -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    
+
     <style>
         /* ========================================
            SMART SCHOOL CSS - MODERN & RESPONSIVE
@@ -49,7 +49,7 @@
         :root {
             /* Smart School Color Palette */
 
-/*  BLUE STYLE OFF 
+/*  BLUE STYLE OFF
 
 
             --primary-50: #eff6ff;
@@ -64,7 +64,7 @@
             --primary-900: #1e3a8a;
             */
 
-            
+
 /* Primary - Modern Green */
 --primary-50:  #9b9b9bff;
 --primary-100: #dcfce7;
@@ -77,7 +77,7 @@
 --primary-800: #166534;
 --primary-900: #14532d;
 
-            
+
             /* Secondary Colors - Tech Green */
             --secondary-50: #ecfdf5;
             --secondary-100: #d1fae5;
@@ -89,7 +89,7 @@
             --secondary-700: #047857;
             --secondary-800: #065f46;
             --secondary-900: #064e3b;
-            
+
             /* Accent Colors - Orange */
             --accent-50: #fff7ed;
             --accent-100: #ffedd5;
@@ -101,7 +101,7 @@
             --accent-700: #c2410c;
             --accent-800: #9a3412;
             --accent-900: #7c2d12;
-            
+
             /* Neutral Colors */
             --gray-50: #f9fafb;
             --gray-100: #f3f4f6;
@@ -113,14 +113,14 @@
             --gray-700: #374151;
             --gray-800: #1f2937;
             --gray-900: #111827;
-            
+
             /* Smart Gradients */
             --gradient-primary: linear-gradient(135deg, var(--primary-600) 0%, var(--primary-500) 50%, var(--secondary-500) 100%);
             --gradient-secondary: linear-gradient(135deg, var(--secondary-500) 0%, var(--secondary-400) 100%);
             --gradient-accent: linear-gradient(135deg, var(--accent-500) 0%, var(--accent-400) 100%);
             --gradient-hero: linear-gradient(135deg, var(--primary-900) 0%, var(--primary-700) 30%, var(--primary-600) 70%, var(--secondary-500) 100%);
             --gradient-glass: linear-gradient(135deg, rgba(255, 255, 255, 0.25) 0%, rgba(255, 255, 255, 0.1) 100%);
-            
+
             /* Modern Shadows */
             --shadow-xs: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
             --shadow-sm: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
@@ -130,14 +130,14 @@
             --shadow-2xl: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
             --shadow-glow: 0 0 20px rgba(37, 99, 235, 0.3);
             --shadow-glow-green: 0 0 20px rgba(16, 185, 129, 0.3);
-            
+
             /* Smooth Transitions */
             --transition-fast: all 0.15s cubic-bezier(0.4, 0, 0.2, 1);
             --transition-normal: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
             --transition-slow: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
             --transition-bounce: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
             --transition-elastic: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            
+
             /* Border Radius */
             --radius-sm: 0.375rem;
             --radius-md: 0.5rem;
@@ -146,7 +146,7 @@
             --radius-2xl: 1.5rem;
             --radius-3xl: 2rem;
             --radius-full: 9999px;
-            
+
             /* Spacing */
             --space-1: 0.25rem;
             --space-2: 0.5rem;
@@ -199,7 +199,7 @@
 /* 1. Navbar Utama (Header) */
 .navbar {
  font-family: 'Nunito', sans-serif;
-        font-weight: 600; 
+        font-weight: 600;
         font-size: 16px;    position: fixed;
     top: 0;
     left: 0;
@@ -450,7 +450,7 @@
 
 
 
-        
+
 
 
 
@@ -464,7 +464,7 @@
             align-items: center;
             position: relative;
             overflow: hidden;
-            padding-top: 90px; 
+            padding-top: 90px;
         }
 
         .hero::before {
@@ -519,7 +519,7 @@
             gap: var(--space-4);
             flex-wrap: wrap;
         }
-            
+
 
 
 
@@ -576,9 +576,9 @@
             color: white;
         }
 
-      
 
-        
+
+
         /* Floating Elements */
         .floating-element {
             position: absolute;
@@ -834,7 +834,7 @@
             .navbar-toggler {
                 display: block;
             }
-            
+
 
             .navbar-nav {
 
@@ -964,7 +964,7 @@
                 padding: 0 var(--space-4);
             }
 
-            
+
 
             .hero-text h1 {
                 font-size: 2rem;
@@ -1131,7 +1131,7 @@
       </a>
     </li>
     <li>
-      <a class="{{ request()->routeIs('information.ppdb*') ? 'active' : '' }}" href="{{ route('information.ppdb') }}">
+      <a class="{{ request()->routeIs('information.ppdb') ? 'active' : '' }}" href="{{ route('information.ppdb') }}">
         Informasi PPDB
       </a>
     </li>
@@ -1226,7 +1226,7 @@
                         </div>
                     </div>
                     <p class="footer-description">
-                        Sekolah unggulan yang mengintegrasikan teknologi modern dengan pendidikan berkualitas 
+                        Sekolah unggulan yang mengintegrasikan teknologi modern dengan pendidikan berkualitas
                         untuk menciptakan generasi yang cerdas, berkarakter, dan berwawasan global.
                     </p>
                 </div>
@@ -1276,7 +1276,7 @@
 
     <!-- JavaScript -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    
+
     <script>
        // ===================================================================
 // JAVASCRIPT LENGKAP UNTUK SEMUA FITUR
@@ -1337,7 +1337,7 @@ document.addEventListener('DOMContentLoaded', function() {
             link.addEventListener('click', (e) => {
                 e.preventDefault();
                 const parentItem = e.currentTarget.parentElement;
-                
+
                 // Tutup dropdown lain jika ada yang aktif
                 if (!parentItem.classList.contains('active')) {
                     sidebarDropdowns.forEach(d => {
@@ -1346,7 +1346,7 @@ document.addEventListener('DOMContentLoaded', function() {
                         }
                     });
                 }
-                
+
                 // Toggle (buka/tutup) dropdown yang diklik
                 parentItem.classList.toggle('active');
             });

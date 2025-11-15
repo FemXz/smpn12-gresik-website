@@ -25,7 +25,7 @@
             </div>
         </div>
     </div>
-    
+
     <div class="col-xl-3 col-lg-6 col-md-6 mb-4">
         <div class="stat-card success">
             <div class="stat-icon success">
@@ -39,7 +39,7 @@
             </div>
         </div>
     </div>
-    
+
     <div class="col-xl-3 col-lg-6 col-md-6 mb-4">
         <div class="stat-card warning">
             <div class="stat-icon warning">
@@ -53,7 +53,7 @@
             </div>
         </div>
     </div>
-    
+
     <div class="col-xl-3 col-lg-6 col-md-6 mb-4">
         <div class="stat-card info">
             <div class="stat-icon info">
@@ -84,7 +84,7 @@
             </div>
         </div>
     </div>
-    
+
     <div class="col-xl-3 col-lg-6 col-md-6 mb-4">
         <div class="stat-card success">
             <div class="stat-icon success">
@@ -98,7 +98,7 @@
             </div>
         </div>
     </div>
-    
+
     <div class="col-xl-3 col-lg-6 col-md-6 mb-4">
         <div class="stat-card warning">
             <div class="stat-icon warning">
@@ -112,20 +112,28 @@
             </div>
         </div>
     </div>
-    
-    <div class="col-xl-3 col-lg-6 col-md-6 mb-4">
-        <div class="stat-card info">
-            <div class="stat-icon info">
-                <i class="fas fa-user-plus"></i>
-            </div>
-            <div class="stat-number text-info">{{ \App\Models\Ppdb::count() }}</div>
-            <div class="stat-label">PPDB</div>
-            <div class="stat-change positive">
-                <i class="fas fa-arrow-up me-1"></i>
-                Aktif
-            </div>
+
+   <div class="col-xl-3 col-lg-6 col-md-6 mb-4">
+    <div class="stat-card info">
+        <div class="stat-icon info">
+            <i class="fas fa-user-plus"></i>
+        </div>
+
+        <!-- Karena PPDB cuma 1 setting -->
+        <div class="stat-number text-info">
+            {{ \App\Models\PpdbSetting::count() }}
+        </div>
+
+        <div class="stat-label">PPDB</div>
+
+        <div class="stat-change positive">
+            <i class="fas fa-arrow-up me-1"></i>
+
+            {{ \App\Models\PpdbSetting::count() ? 'Aktif' : 'Tidak Ada' }}
         </div>
     </div>
+</div>
+
 </div>
 
 <!-- Content Cards -->

@@ -22,12 +22,13 @@ use App\Http\Controllers\PpdbController;
 use App\Http\Controllers\Admin\ProgramController as AdminProgramController;
 use App\Http\Controllers\Admin\EbookController as AdminEbookController;
 use App\Http\Controllers\Admin\AlumniController as AdminAlumniController;
-use App\Http\Controllers\Admin\PpdbController as AdminPpdbController;
+use App\Http\Controllers\Admin\PpdbSettingController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\Admin\AdminProfileController;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Admin\StatController;
+
 
 
 
@@ -72,13 +73,13 @@ Route::prefix("about")->group(function () {
 
 // News & PPDB
 Route::prefix('information')->group(function () {
-  
+
     Route::get('/news', [NewsController::class, 'index'])->name('information.news');
     Route::get('/news/{slug}', [NewsController::class, 'show'])->name('information.news.show');
 
-    Route::get('/ppdb', [PpdbController::class, 'index'])->name('information.ppdb');
-    Route::get('/ppdb/register', [PpdbController::class, 'create'])->name('information.ppdb.create');
-    Route::post('/ppdb/register', [PpdbController::class, 'store'])->name('information.ppdb.store');
+   Route::get('/information/ppdb', [PpdbController::class, 'index'])
+    ->name('information.ppdb');
+
 });
 
 // ekstraa
@@ -164,6 +165,7 @@ Route::prefix("ppdb")->group(function () {
 });
 
 
+
 Route::middleware('auth')->prefix('admin')->group(function () {
     Route::get('/profile', [AdminProfileController::class, 'edit'])->name('admin.profile.edit');
     Route::post('/profile', [AdminProfileController::class, 'update'])->name('admin.profile.update');
@@ -183,8 +185,17 @@ Route::middleware('auth')->prefix("admin")->group(function () {
     Route::redirect('/', '/admin/dashboard');
 
 
-    
+
     Route::get("/dashboard", [DashboardController::class, "index"])->name("admin.dashboard");
+
+
+
+     Route::prefix('ppdb')->name('admin.ppdb.')->group(function () {
+        Route::get('/settings', [PpdbSettingController::class, 'edit'])->name('settings.edit');
+        Route::put('/settings', [PpdbSettingController::class, 'update'])->name('settings.update');
+    });
+
+
 
     // Gallery
     Route::resource('gallery', AdminGalleryController::class)
@@ -199,14 +210,7 @@ Route::middleware('auth')->prefix("admin")->group(function () {
     Route::post('/profile', [AdminProfileController::class, 'update'])->name('admin.profile.update');
 });
 
-// admin PPDB
-Route::prefix('admin/ppdb')->name('admin.ppdb.')->group(function () {
-    
-    Route::get('/dashboard', [PpdbAdminController::class, 'dashboard'])->name('dashboard');
-    Route::get('/pendaftar', [PpdbAdminController::class, 'pendaftar'])->name('pendaftar');
-    Route::get('/pengaturan', [PpdbAdminController::class, 'pengaturan'])->name('pengaturan');
 
-});
 
 // admin user
  Route::prefix('admin')->name('admin.')->middleware(['auth', 'can:isAdmin'])->group(function () {
@@ -215,11 +219,12 @@ Route::prefix('admin/ppdb')->name('admin.ppdb.')->group(function () {
     Route::delete('/users/{id}', [UserController::class, 'destroy'])->name('users.destroy');
 });
 
-    
-   
+
+
     // School Stats
     Route::get('/stats/edit', [StatController::class, 'edit'])->name('admin.stats.edit');
     Route::put('/stats/update', [StatController::class, 'update'])->name('admin.stats.update');
+
 
 
     // News Routes
@@ -280,14 +285,11 @@ Route::prefix('admin/ppdb')->name('admin.ppdb.')->group(function () {
     Route::patch("/alumni/{alumni}/approve", [AdminAlumniController::class, "approve"])->name("admin.alumni.approve");
     Route::patch("/alumni/{alumni}/feature", [AdminAlumniController::class, "feature"])->name("admin.alumni.feature");
 
-    // PPDB
-    Route::get("/ppdb", [AdminPpdbController::class, "index"])->name("admin.ppdb.index");
-    Route::get("/ppdb/create", [AdminPpdbController::class, "create"])->name("admin.ppdb.create");
-    Route::post("/ppdb", [AdminPpdbController::class, "store"])->name("admin.ppdb.store");
-    Route::get("/ppdb/{ppdb}/edit", [AdminPpdbController::class, "edit"])->name("admin.ppdb.edit");
-    Route::put("/ppdb/{ppdb}", [AdminPpdbController::class, "update"])->name("admin.ppdb.update");
-    Route::delete("/ppdb/{ppdb}", [AdminPpdbController::class, "destroy"])->name("admin.ppdb.destroy");
+
+
 });
+
+
 
 
 

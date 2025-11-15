@@ -2,20 +2,36 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Ppdb;
-use Illuminate\Http\Request;
+use App\Models\PpdbSetting;
 
 class PpdbController extends Controller
 {
+    /**
+     * Halaman PPDB Utama
+     */
     public function index()
     {
-        $activePpdb = Ppdb::active()->orderBy('created_at', 'desc')->get();
-        return view('information.ppdb.index', compact('activePpdb'));
+        $ppdb = PpdbSetting::first();
+
+        // Jika belum ada data sama sekali
+        if (!$ppdb) {
+            return view('information.ppdb.index', ['ppdb' => null]);
+        }
+
+        return view('information.ppdb.index', compact('ppdb'));
     }
 
-    public function show(Ppdb $ppdb)
+    /**
+     * Halaman Detail PPDB (opsional)
+     */
+    public function show()
     {
-        return view('ppdb.show', compact('ppdb'));
+        $ppdb = PpdbSetting::first();
+
+        if (!$ppdb) {
+            return view('information.ppdb.show', ['ppdb' => null]);
+        }
+
+        return view('information.ppdb.show', compact('ppdb'));
     }
 }
-

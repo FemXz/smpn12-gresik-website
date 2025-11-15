@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\News;
 use App\Models\Teacher;
 use App\Models\Stat;
+use App\Models\PpdbSetting; // 🟢 WAJIB ADA
 
 class HomeController extends Controller
 {
@@ -45,6 +46,9 @@ class HomeController extends Controller
                 'achievements' => 0,
             ];
         }
+
+        // 🟢 **AMBIL DATA PPDB (supaya section PPDB di home tidak error)**
+        $ppdb = PpdbSetting::first();
 
         // 🔹 Siapkan data lain untuk view
         $data = [
@@ -105,7 +109,7 @@ class HomeController extends Controller
         ];
 
         // 🔹 Kirim semua data ke view
-        return view('home', compact('data', 'teachers', 'stat'));
+        return view('home', compact('data', 'teachers', 'stat', 'ppdb'));
     }
 
     // 🔹 API untuk event mendatang

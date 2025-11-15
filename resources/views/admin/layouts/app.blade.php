@@ -5,16 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>@yield("title", "Admin Dashboard - SMPN 12 Gresik")</title>
-    
+
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    
+
     <!-- CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    
+
     <style>
         :root {
             --primary-color: #2563eb;
@@ -656,7 +656,7 @@
 }
 
     </style>
-    
+
     @stack('styles')
 </head>
 <body>
@@ -676,7 +676,7 @@
                 </a>
             </li>
 
-          
+
             <li class="nav-item">
                 <a class="nav-link {{ request()->routeIs('admin.stats.edit') ? 'active' : '' }}" href="{{ route('admin.stats.edit') }}">
                     <i class="fas fa-chart-bar"></i>
@@ -748,10 +748,12 @@
             </li>
 
             <li class="nav-item">
-                <a class="nav-link {{ request()->routeIs('admin.ppdb.*') ? 'active' : '' }}" href="{{ route('admin.ppdb.index') }}">
-                    <i class="fas fa-user-plus"></i>
-                    <span>PPDB</span>
-                </a>
+ <a class="nav-link {{ request()->routeIs('admin.ppdb.settings.*') ? 'active' : '' }}"
+   href="{{ route('admin.ppdb.settings.edit') }}">
+    <i class="fas fa-user-plus"></i>
+    <span>PPDB</span>
+</a>
+
             </li>
 
             <li class="nav-item mt-3">
@@ -825,7 +827,7 @@
 
     <!-- Scripts -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-    
+
     <script>
         // Toggle sidebar for mobile
         function toggleSidebar() {
@@ -837,7 +839,7 @@
         document.addEventListener('click', function(event) {
             const sidebar = document.getElementById('sidebar');
             const toggleBtn = document.querySelector('[onclick="toggleSidebar()"]');
-            
+
             if (window.innerWidth <= 768) {
                 if (!sidebar.contains(event.target) && !toggleBtn.contains(event.target)) {
                     sidebar.classList.remove('show');
@@ -869,7 +871,7 @@
             });
         });
     </script>
-    
+
     @stack('scripts')
 </body>
 </html>
